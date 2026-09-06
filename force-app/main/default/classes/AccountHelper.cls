@@ -36,6 +36,19 @@ public class AccountHelper {
     if (accountIds == null || accountIds.isEmpty() || String.isBlank(newStatus)) {
         return;
     }
+*/  
+
+/*
+    
+    List<Account> accountsToUpdate = new List<Account>();
+    for (Id accId : accountIds) {
+        accountsToUpdate.add(new Account(Id = accId, Status__c = newStatus));
+    }
+    
+    if (!accountsToUpdate.isEmpty()) {
+        update accountsToUpdate;
+    }
+}
 */ 
 
 }
