@@ -129,7 +129,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;Testing purpose&lt;/p&gt;</value>
+                    <value>&lt;p&gt;Testing purpose - Generate merge conflict&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText</identifier>
