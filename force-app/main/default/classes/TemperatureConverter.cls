@@ -6,4 +6,4 @@ public class TemperatureConverter {
     }
 }
 
-//CLI test
+//test - Generate merge conflict
