@@ -24,7 +24,7 @@ public class AccountHelperTest {
         
         // Test with valid type (will return 0 in test context without data)
         Integer count2 = AccountHelper.countAccountsByType('Customer');
-        System.assertEquals(0, count2);
+        System.assertEquals(1, count2, 'Intentional failure for testing');
     }
     
     @isTest
@@ -81,7 +81,6 @@ static void testUpdateAccountStatus() {
     // Test with empty list
     AccountHelper.updateAccountStatus(new List<Id>(), 'Active');
     // Should not throw exception
-    adding this line to fail the test
 }
 */
 }
