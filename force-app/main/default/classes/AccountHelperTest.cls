@@ -81,6 +81,7 @@ static void testUpdateAccountStatus() {
     // Test with empty list
     AccountHelper.updateAccountStatus(new List<Id>(), 'Active');
     // Should not throw exception
+    adding this line to fail the test
 }
 */
 }
