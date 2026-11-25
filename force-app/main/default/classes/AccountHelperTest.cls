@@ -24,7 +24,7 @@ public class AccountHelperTest {
         
         // Test with valid type (will return 0 in test context without data)
         Integer count2 = AccountHelper.countAccountsByType('Customer');
-        System.assertEquals(0, count2);
+        System.assertEquals(1, count2, 'Intentional failure for testing');
     }
     
     @isTest
@@ -33,4 +33,54 @@ public class AccountHelperTest {
         List<Account> accounts = AccountHelper.getActiveAccounts();
         System.assertNotEquals(null, accounts);
     }
+/*    @isTest
+static void testAssignAccountTerritory() {
+    // Create test account
+    Account testAcc = new Account(Name = 'Test Account', Territory__c = 'North');
+    insert testAcc;
+    
+    // Test territory assignment
+    AccountHelper.assignAccountTerritory(testAcc.Id, 'South');
+    
+    Account updatedAcc = [SELECT Territory__c FROM Account WHERE Id = :testAcc.Id];
+    System.assertEquals('South', updatedAcc.Territory__c);
+    
+    // Test exception handling
+    try {
+        AccountHelper.assignAccountTerritory(null, 'West');
+        System.assert(false, 'Expected exception');
+    } catch (IllegalArgumentException e) {
+        System.assert(true);
+    }
+}
+*/
+
+/*
+@isTest
+static void testUpdateAccountStatus() {
+    // Create test accounts
+    List<Account> testAccounts = new List<Account>();
+    for (Integer i = 0; i < 3; i++) {
+        testAccounts.add(new Account(Name = 'Test Account ' + i, Status__c = 'Active'));
+    }
+    insert testAccounts;
+    
+    List<Id> accountIds = new List<Id>();
+    for (Account acc : testAccounts) {
+        accountIds.add(acc.Id);
+    }
+    
+    // Test bulk status update
+    AccountHelper.updateAccountStatus(accountIds, 'Inactive');
+    
+    List<Account> updatedAccounts = [SELECT Status__c FROM Account WHERE Id IN :accountIds];
+    for (Account acc : updatedAccounts) {
+        System.assertEquals('Inactive', acc.Status__c);
+    }
+    
+    // Test with empty list
+    AccountHelper.updateAccountStatus(new List<Id>(), 'Active');
+    // Should not throw exception
+}
+*/
 }
